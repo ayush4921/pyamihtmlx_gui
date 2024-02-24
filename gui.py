@@ -3,7 +3,6 @@ from tkinter import ttk, filedialog, messagebox
 import subprocess
 
 
-# Function to update the input field based on dropdown selection
 def update_input_field(*args):
     selection = glob_pattern.get()
     if selection == "Custom":
@@ -15,7 +14,6 @@ def update_input_field(*args):
         input_dir.insert(0, selection)
 
 
-# Function to run the pyamihtmlx command
 def run_pyamihtmlx():
     input_path = (
         input_dir.get() if glob_pattern.get() == "Custom" else glob_pattern.get()
@@ -32,11 +30,11 @@ def run_pyamihtmlx():
 
 app = tk.Tk()
 app.title("PyAMIHTMLX GUI")
-app.geometry("500x300")  # Set the window size
+app.geometry("500x300")
 
 # Styling
 style = ttk.Style(app)
-style.theme_use("clam")  # Change the theme for a better look
+style.theme_use("clam")
 
 # Improve spacing and organization
 main_frame = ttk.Frame(app, padding="10 10 10 10")
