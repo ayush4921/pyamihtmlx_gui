@@ -1,0 +1,7 @@
+pyamihtmlx
+pandas
+scikit-learn 
+scipy 
+matplotlib
+selenium
+webdriver_manager

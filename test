@@ -1,0 +1,30 @@
+# run on a single chapter
+>  pyamihtmlx IPCC --input 
+cleaned_content/wg1/Chapter01/html_with_ids.html --query asia --output asia.html
+
+# run on a whole WG (using wildcards `**`)
+  >  pyamihtmlx IPCC --input cleaned_content/wg1/**/html_with_ids.html --query asia --output asia.html
+
+# run this to show the version
+  >  pyamihtmlx --help
+
+# this gives zero hits!
+  >  pyamihtmlx IPCC --input cleaned_content/wg1/**/html_with_ids.html --query "climate repair"  --output climate_repair.html
+
+# this searches the whole corpus and gives hits
+  >  pyamihtmlx IPCC --input cleaned_content/**/html_with_ids.html --query turtles  --output turtles.html
+
+# so does this
+  >  pyamihtmlx IPCC --input cleaned_content/**/html_with_ids.html --query "climate justice"  --output climate_justice.html
+
+# this strips all references
+  >  pyamihtmlx IPCC --input cleaned_content/**/html_with_ids.html --query "climate justice"  --output climate_justice.html --xpath _NOREFS
+
+# another query with no references
+  >  pyamihtmlx IPCC --input cleaned_content/**/html_with_ids.html --query geoengineering  --output geoengineering.html --xpath _NOREFS
+
+# check it's been removed (will give an error message)
+  >  pyamihtmlx 
+# re-install
+  >  pip install pyamihtmlx
+  >  history
